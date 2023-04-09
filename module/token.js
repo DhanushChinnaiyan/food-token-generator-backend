@@ -5,6 +5,10 @@ const {ObjectId} = mongoose.Schema
 
 const tokenschema = new mongoose.Schema(
     {
+        foodImage:{
+            type:String,
+            required:true
+        },
         foodName:{
             type:String,
             required:true

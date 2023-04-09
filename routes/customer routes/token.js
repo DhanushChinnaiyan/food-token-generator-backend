@@ -31,6 +31,7 @@ router.post("/add/:id",async(request,response)=>{
         
         const addToken = await new Token(
             {
+              foodImage:foodDetail.foodImage,  
               foodName:foodDetail.foodName,
               foodToken:foodDetail.foodName.split(" ").join("")+request.customer.name.toLowerCase()+request.customer._id,
               customerId:request.customer._id,

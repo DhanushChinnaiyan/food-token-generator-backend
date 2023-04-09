@@ -34,6 +34,7 @@ router.post("/add/:id", async (request, response) => {
     const postDate = new Date().toJSON().slice(0, 10);
     const cart = await new Cart({
       customerId: request.customer._id,
+      foodImage:foods.foodImage,
       foodName: foods.foodName,
       foodCount: 1,
       foodPrice: foods.foodPrice,

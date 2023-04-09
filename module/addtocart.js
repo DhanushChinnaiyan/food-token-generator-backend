@@ -3,6 +3,10 @@ const {ObjectId} = mongoose.Schema
 
 const cartschema = new mongoose.Schema(
     {
+        foodImage:{
+            type:String,
+            required:true
+        },
         foodName:{
             type:String,
             required:true
