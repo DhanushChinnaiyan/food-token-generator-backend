@@ -28,12 +28,23 @@ router.post("/add/:id",async(request,response)=>{
     try {
         const foodDetail = await Cart.findById(request.params.id);
         
+        let count = 1;
+       let token = foodDetail.foodName.split(" ").join("")+request.customer.name.toLowerCase()+count;
+        const findCustomer = await Token.find({customerId:request.customer._id})
+        const tokenCreate = findCustomer.find({foodToken:token})
+
+        if(!tokenCreate){
+            count++;
+            return 
+        }
+
+
         
         const addToken = await new Token(
             {
               foodImage:foodDetail.foodImage,  
               foodName:foodDetail.foodName,
-              foodToken:foodDetail.foodName.split(" ").join("")+request.customer.name.toLowerCase()+request.customer._id,
+              foodToken:token,
               customerId:request.customer._id,
               customerName:request.customer.name,
               date:Date.now()
