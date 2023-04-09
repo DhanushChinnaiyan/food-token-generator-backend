@@ -22,8 +22,8 @@ router.post("/",async(request,response)=>{
         }
 
         const customerToken = generateCustomerToken(customer._id)
-
-        response.status(200).json({message:"Loged in successfully",customerToken})
+       
+        response.status(200).json({message:"Loged in successfully",customerToken,customerName:customer.name})
         
     } catch (error) {
         console.log("Login error",error)

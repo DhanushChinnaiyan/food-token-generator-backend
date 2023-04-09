@@ -22,8 +22,8 @@ router.post("/",async(request,response)=>{
             password : hashedPassword
         }).save();
 
-        const headertoken = generateCustomerToken(customer._id);
-        response.status(201).json({message : "succefully signed up",headertoken})
+     
+        response.status(201).json({message : "succefully signed up"})
 
 
     } catch (error) {
