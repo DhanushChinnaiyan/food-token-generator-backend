@@ -33,6 +33,8 @@ router.post("/add/:id",async(request,response)=>{
             {
               foodImage:foodDetail.foodImage,  
               foodName:foodDetail.foodName,
+              foodPrice:foodDetail.totalFoodPrice,
+              noOfFood:foodDetail.foodCount,
               customerId:request.customer._id,
               customerName:request.customer.name,
               date:Date.now()

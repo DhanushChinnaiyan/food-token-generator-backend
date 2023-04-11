@@ -13,6 +13,14 @@ const tokenschema = new mongoose.Schema(
             type:String,
             required:true
         },
+        foodPrice:{
+            type:Number,
+            required:true
+        },
+        noOfFood:{
+            type:Number,
+            required:true
+        },
         customerId:{
             type:ObjectId,
             ref:"customer"
