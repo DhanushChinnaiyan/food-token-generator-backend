@@ -38,6 +38,7 @@ router.post("/add/:id", async (request, response) => {
       foodName: foods.foodName,
       foodCount: 1,
       foodPrice: foods.foodPrice,
+      totalFoodPrice:foods.foodPrice,
       AddedToCartDate: postDate,
     }).save();
     if (!cart) {
@@ -62,7 +63,7 @@ router.put("/edit/:id", async (request, response) => {
       { _id: request.params.id },
       { $set: {
         foodCount:request.body.foodCount,
-        foodPrice:request.body.foodCount*foodPricedetail.foodPrice
+        totalFoodPrice:request.body.foodCount*foodPricedetail.foodPrice
       } },
       { new: true }
     );

@@ -19,6 +19,10 @@ const cartschema = new mongoose.Schema(
             type:Number,
             required:true
         },
+        totalFoodPrice:{
+            type:Number,
+            required:true
+        },
         customerId:{
             type:ObjectId,
             ref:"customer"
