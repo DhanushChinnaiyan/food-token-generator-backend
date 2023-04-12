@@ -27,6 +27,10 @@ const cartschema = new mongoose.Schema(
             type:ObjectId,
             ref:"customer"
         },
+        foodId:{
+            type:ObjectId,
+            ref:"food"
+        },
         AddedToCartDate:{
             type:String,
             required:true
