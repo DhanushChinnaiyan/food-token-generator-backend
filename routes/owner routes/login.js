@@ -33,7 +33,7 @@ router.post("/",async(request,response)=>{
 
         const ownerToken = generateOwnerToken(owner._id);
 
-        response.status(200).json({message:"Loged in successfully",ownerToken})
+        response.status(200).json({message:"Loged in successfully",ownerToken,ownerName:owner.name})
         
     } catch (error) {
         console.log("login error",error)
