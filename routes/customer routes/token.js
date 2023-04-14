@@ -16,7 +16,7 @@ router.get("/",async(request,response)=>{
     }
     response.status(200).json(token)
   } catch (error) {
-    console.log("tkoen get error ",error)
+    console.log("token get error ",error)
     response.status(500).json({message:"Internal server error"})
   }
 })

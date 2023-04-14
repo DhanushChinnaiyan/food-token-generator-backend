@@ -17,6 +17,7 @@ import { customerCartRouter } from './routes/customer routes/cart.js';
 import { ownerCartRouter } from './routes/owner routes/cart.js';
 import { customertokenRouter } from './routes/customer routes/token.js';
 import { ownerTokenRouter } from './routes/owner routes/token.js';
+import { customergetRouter } from './routes/owner routes/customer.js';
 
 
 
@@ -39,10 +40,13 @@ app.use("/customer/signup",customerSignupRouter)
 app.use("/customer/login",customerLoginRouter)
 app.use("/customer/forgotpassword",forgotCustomerRouter)
 
+
+
 // owner router
 app.use("/owner/signup",ownerSignupRouter)
 app.use("/owner/login",ownerLoginRouter)
 app.use("/owner/forgotpassword",forgotOwnerRouter)
+app.use("/customer",ownersignedIn,customergetRouter)
 
 // food router
 app.use("/customer",customersignedIn,customerRouter)
