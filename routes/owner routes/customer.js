@@ -1,5 +1,5 @@
 import express from 'express';
-import { Customer } from '../../module/customer';
+import { Customer } from '../../module/customer.js';
 
 
 
