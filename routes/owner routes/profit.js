@@ -37,8 +37,8 @@ router.post("/:id",async(request,response)=>{
         {   foodId:request.params.id,
             foodName:foodDetail.foodName,
             foodPrice:foodDetail.foodPrice,
-            customerId:request.customer._id,
-            foodCount:foodDetail.foodCount,
+            customerId:foodDetail.customerId,
+            foodCount:foodDetail.noOfFood,
             deliveredDate:postDate
         }
        ).save()

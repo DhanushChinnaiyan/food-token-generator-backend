@@ -12,7 +12,6 @@ import { profitGetRouter } from './routes/owner routes/profit.js';
 import customersignedIn from './controller/customerAuthorization.js';
 import { customerRouter } from './routes/customer routes/food.js';
 import ownersignedIn from './controller/ownerAuthorization.js';
-import { profitPostRouter } from './routes/customer routes/profitpost.js';
 import { customerCartRouter } from './routes/customer routes/cart.js';
 import { ownerCartRouter } from './routes/owner routes/cart.js';
 import { customertokenRouter } from './routes/customer routes/token.js';
