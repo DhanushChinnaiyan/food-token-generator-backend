@@ -20,5 +20,18 @@ router.get("/",async(request,response)=>{
   }
 })
 
+router.delete("/:id",async(request,response)=>{
+  try {
+      const deleteToken = await Token.findByIdAndDelete({_id:request.params.id});
+      if(!deleteToken){
+          return response.status(400).json({message:"Error deleting token"})
+      }
+      response.status(200).json({message:"Token deleted successfully"})
+      
+  } catch (error) {
+      console.log("deleting oken error ",error)
+      response.status(500).json({message:"Internal Server Error"})
+  }
+})
 
 export const ownerTokenRouter = router;
