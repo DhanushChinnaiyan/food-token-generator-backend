@@ -54,7 +54,6 @@ app.use("/owner",ownersignedIn,ownerfoodRouter)
 
 // profit router
 app.use("/profit",ownersignedIn,profitGetRouter)
-app.use("/profitpost",customersignedIn,profitPostRouter)
 
 // cart router
 app.use("/cart",customersignedIn,customerCartRouter)
