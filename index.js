@@ -45,7 +45,7 @@ app.use("/customer/forgotpassword",forgotCustomerRouter)
 app.use("/owner/signup",ownerSignupRouter)
 app.use("/owner/login",ownerLoginRouter)
 app.use("/owner/forgotpassword",forgotOwnerRouter)
-app.use("/customer",ownersignedIn,customergetRouter)
+app.use("/customers",ownersignedIn,customergetRouter)
 
 // food router
 app.use("/customer",customersignedIn,customerRouter)

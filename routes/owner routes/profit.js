@@ -31,7 +31,7 @@ router.post("/:id",async(request,response)=>{
       const postDate = new Date().toJSON().slice(0, 10);
       const foodDetail = await Token.findById(request.params.id)
       if(!foodDetail){
-        return response.status(400).json({message:"Error posting your food"})
+        return response.status(400).json({message:"Error Searching your food"})
     }
        const food = await new Profit(
         {   foodId:request.params.id,
