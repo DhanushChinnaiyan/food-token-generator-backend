@@ -3,7 +3,7 @@ import { OTP } from "../../module/OTPforForgotPassword.js";
 import OTPGenerator from "../EmailAndOTP/OTPString.js";
 import mail from "../EmailAndOTP/emailscript.js";
 import bcrypt from 'bcrypt'
-import { Owner } from "../../module/owner.js";
+import { Owner, generateOwnerToken } from "../../module/owner.js";
 
 const router = express.Router();
 
