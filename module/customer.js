@@ -22,8 +22,8 @@ const customerSchema = new mongoose.Schema(
     }
 )
 
-const generateCustomerToken = (id) =>{
-    return jwt.sign({id},"2e6a98abb5b23339ad")
+const generateCustomerToken = (id,expiresIn) =>{
+    return jwt.sign({id},"2e6a98abb5b23339ad",{expiresIn})
 }
 
 const Customer = mongoose.model("customer",customerSchema)

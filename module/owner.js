@@ -22,8 +22,8 @@ const ownerSchema = new mongoose.Schema(
     }
 )
 
-const generateOwnerToken = (id) =>{
-    return jwt.sign({id},"2e6a98abb5b23339ad")
+const generateOwnerToken = (id,expiresIn) =>{
+    return jwt.sign({id},"2e6a98abb5b23339ad",{expiresIn})
 }
 
 const Owner = mongoose.model("owner",ownerSchema)

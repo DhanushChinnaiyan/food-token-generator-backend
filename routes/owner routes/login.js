@@ -31,7 +31,7 @@ router.post("/",async(request,response)=>{
             return response.status(400).json({message:"you are not the owner"})
         }
 
-        const ownerToken = generateOwnerToken(owner._id);
+        const ownerToken = generateOwnerToken(owner._id,"2d");
 
         response.status(200).json({message:"Loged in successfully",ownerToken,ownerName:owner.name})
         

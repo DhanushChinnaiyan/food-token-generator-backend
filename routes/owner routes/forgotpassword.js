@@ -20,7 +20,7 @@ router.post("/", async (request, response) => {
       email: request.body.email,
       OTP: OTPstring,
     }).save();
-    const pathToken = generateOwnerToken(user._id)
+    const pathToken = generateOwnerToken(user._id,"10m")
     // Sends OTP to user email
     mail(OTPstring, request.body.email);
 
@@ -41,7 +41,7 @@ router.post("/otp",async(request,response)=>{
     const userOTP = await OTP.findOne({email:request.body.email,OTP:request.body.OTP})
     if(!userOTP)return response.status(400).json({message:"Invalid OTP"})
 
-    const pathToken = generateOwnerToken(userOTP._id)
+    const pathToken = generateOwnerToken(userOTP._id,"10m")
 
     response.status(200).json({message:"You can reset your password now",path:pathToken})
     

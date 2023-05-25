@@ -21,7 +21,7 @@ router.post("/",async(request,response)=>{
             return response.status(400).json({message:"Invalid Email or Password"})
         }
 
-        const customerToken = generateCustomerToken(customer._id)
+        const customerToken = generateCustomerToken(customer._id,"2d")
        
         response.status(200).json({message:"Loged in successfully",customerToken,customerName:customer.name})
         
