@@ -20,10 +20,11 @@ router.post("/", async (request, response) => {
       email: request.body.email,
       OTP: OTPstring,
     }).save();
+    const pathToken = generateOwnerToken(user._id)
     // Sends OTP to user email
     mail(OTPstring, request.body.email);
 
-    response.status(200).json({ message: "Email sent successfully" });
+    response.status(200).json({ message: "Email sent successfully",path:pathToken });
   } catch (error) {
     console.log("Email verification error", error);
     response.status(500).json({
@@ -40,7 +41,9 @@ router.post("/otp",async(request,response)=>{
     const userOTP = await OTP.findOne({email:request.body.email,OTP:request.body.OTP})
     if(!userOTP)return response.status(400).json({message:"Invalid OTP"})
 
-    response.status(200).json({message:"You can reset your password now"})
+    const pathToken = generateOwnerToken(userOTP._id)
+
+    response.status(200).json({message:"You can reset your password now",path:pathToken})
     
   } catch (error) {
     console.log("OTP verification error", error);
